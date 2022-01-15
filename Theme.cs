@@ -2,7 +2,7 @@ using Spectre.Console.Rendering;
 
 namespace Spectre.Console.Extensions;
 
-public static class Theme
+internal static class Theme
 {
     public static Tree Tree(string title)
     {
