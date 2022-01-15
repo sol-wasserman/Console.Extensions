@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Spectre.Console" Version="0.43.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" PrivateAssets="all" />
+    <PackageReference Include="Spectre.Console" Version="0.43.0" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
