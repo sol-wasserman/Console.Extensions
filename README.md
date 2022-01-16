@@ -5,13 +5,13 @@ var subject = new Transaction
 {
     Date = DateTime.Now,
     IsPending = true,
-    Goods = new()
+    Goods = new List<Line>
     {
-        new(7804, "CryptoPunk 7804"),
-        new(3100, "CryptoPunk 3100"),
-        new(2107, Title: null),
+        new(Id: 7804, Title: "CryptoPunk 7804"),
+        new(Id: 3100, Title: "CryptoPunk 3100"),
+        new(Id: 2107, Title: null),
     },
-    Tags = new() {"super", "posh"}
+    Tags = new List<string> {"super", "posh"}
 };
 
 AnsiConsole.Write(subject.Render());
