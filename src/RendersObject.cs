@@ -12,54 +12,56 @@ public static class RendersObject
         Converters = { new StringEnumConverter() },
     });
 
-    public static IRenderable Render<T>(this T? value, string? header = null)
+    public static IRenderable Render<T>(this T? value, string? title = null)
     {
         return value switch
         {
             Exception exception => exception.GetRenderable(),
-            _ => new Panel(MakeJToken(value).RenderAny(header)).NoBorder(),
+            _ => new Panel(MakeJToken(value).RenderAny(title)).NoBorder(),
         };
-
-        static JToken? MakeJToken(object? value)
+    }
+    
+    internal static JToken? MakeJToken(this object? value)
+    {
+        return value switch
         {
-            return value switch
-            {
-                JToken jToken => jToken,
-                null => null,
-                _ => JToken.FromObject(value, Serializer)
-            };
-        }
+            JToken jToken => jToken,
+            null => null,
+            _ => JToken.FromObject(value, Serializer),
+        };
     }
 
-    private static IRenderable RenderAny(this JToken? token, string? header = null)
+    internal static IRenderable RenderAny(this JToken? token, string? title = null)
     {
         return token switch
         {
-            JArray array => array.RenderArray(header),
-            JObject @object => RenderObject(@object, header),
+            JArray array => array.RenderArray(title),
+            JObject @object => @object.RenderObject(title),
             _ => token.RenderString(),
         };
     }
 
-    private static IRenderable RenderObject(this JObject value, string? header = null)
+    internal static IRenderable RenderObject(this JObject value, string? title = null)
     {
         var grid = new Grid()
             .AddColumn()
             .AddColumn();
 
-        foreach (var (name, token) in value)
+        foreach (var pair in value)
         {
+            var (name, token) = (pair.Key, pair.Value);
+            
             grid.AddRow(Theme.Key(name), token.RenderAny());
         }
 
         var wrapper = Theme.Panel(grid);
 
-        return string.IsNullOrEmpty(header)
+        return string.IsNullOrEmpty(title)
             ? wrapper
-            : wrapper.Header(header);
+            : wrapper.Header(title);
     }
 
-    private static IRenderable RenderArray(this JArray list, string? title = null)
+    internal static IRenderable RenderArray(this JArray list, string? title = null)
     {
         var tree = Theme.Tree(title);
 

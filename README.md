@@ -1,4 +1,5 @@
-# Spectre.Console.Extensions
+Spectre.Console.Extensions
+===========
 
 ```c#
 var subject = new Transaction
@@ -20,3 +21,5 @@ AnsiConsole.Write(subject.Render());
 Prints
 
 ![Example](images/example.png)
+
+> See `/examples`

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectre.Console.Extensions", "Spectre.Console.Extensions.csproj", "{526DD595-7315-459A-B240-9BB6B62D845B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "examples\Example.csproj", "{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectre.Console.Extensions", "src\Spectre.Console.Extensions.csproj", "{7861C541-DE1A-4656-9BF3-58C54F3EE475}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +16,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{526DD595-7315-459A-B240-9BB6B62D845B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{526DD595-7315-459A-B240-9BB6B62D845B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{526DD595-7315-459A-B240-9BB6B62D845B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{526DD595-7315-459A-B240-9BB6B62D845B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7861C541-DE1A-4656-9BF3-58C54F3EE475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7861C541-DE1A-4656-9BF3-58C54F3EE475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7861C541-DE1A-4656-9BF3-58C54F3EE475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7861C541-DE1A-4656-9BF3-58C54F3EE475}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
