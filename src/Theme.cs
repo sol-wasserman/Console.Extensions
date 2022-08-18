@@ -1,7 +1,9 @@
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
 using Spectre.Console.Rendering;
 
 namespace Spectre.Console.Extensions;
+
+using static JsonValueKind;
 
 internal static class Theme
 {
@@ -27,18 +29,15 @@ internal static class Theme
         );
     }
 
-    public static Color? Color(this JTokenType value)
+    public static Color? Color(this JsonValueKind value)
     {
         return value switch
         {
-            JTokenType.Integer => Console.Color.Teal,
-            JTokenType.Float => Console.Color.Teal,
-            JTokenType.String => Console.Color.Yellow,
-            JTokenType.Date => Console.Color.Yellow,
-            JTokenType.Guid => Console.Color.Yellow,
-            JTokenType.Uri => Console.Color.Yellow,
-            JTokenType.TimeSpan => Console.Color.Yellow,
-            JTokenType.Boolean => Console.Color.Red,
+            Number => Console.Color.Teal,
+            String => Console.Color.Yellow,
+            True or False => Console.Color.Red,
+            Object => Console.Color.Grey,
+            Array => Console.Color.Blue,
             _ => null,
         };
     }

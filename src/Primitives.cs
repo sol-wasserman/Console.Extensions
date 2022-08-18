@@ -1,4 +1,5 @@
-using Newtonsoft.Json.Linq;
+using System.Globalization;
+using System.Text.Json;
 using Spectre.Console.Rendering;
 
 namespace Spectre.Console.Extensions;
@@ -7,16 +8,27 @@ public static class Primitives
 {
     public static readonly IRenderable Null = new Markup(text: "[dim]null[/]");
 
-    public static IRenderable RenderString(this JToken? token)
+    public static IRenderable RenderString(this JsonElement? element)
     {
-        if (token == null || token.Type == JTokenType.Null)
+        return element.HasValue ? element.Value.RenderString() : Null;
+    }
+    
+    public static IRenderable RenderString(this JsonElement element)
+    {
+        if (element.ValueKind is JsonValueKind.Null)
         {
             return Null;
         }
 
         return new Markup(
-            text: token.ToString().EscapeMarkup(),
-            style: new(foreground: token.Type.Color())
+            text: ToString(element).EscapeMarkup(),
+            style: new(foreground: element.ValueKind.Color())
         );
     }
+
+    private static string ToString(JsonElement element) => element.ValueKind switch
+    {
+        JsonValueKind.String when element.TryGetDateTime(out var date) => date.ToString(CultureInfo.InvariantCulture),
+        _ => element.ToString(),
+    };
 }
