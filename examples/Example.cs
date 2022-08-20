@@ -1,4 +1,3 @@
-using Spectre.Console;
 using Spectre.Console.Extensions;
 
 var subject = new Transaction
@@ -14,7 +13,7 @@ var subject = new Transaction
     Tags = new() {"super", "posh"},
 };
 
-AnsiConsole.Write(subject.Render());
+subject.Dump("Transaction");
 
 #nullable disable
 public class Transaction
@@ -26,5 +25,3 @@ public class Transaction
 
     public record Line(long Id, string Title);
 }
-
-public enum Status { Pending }
