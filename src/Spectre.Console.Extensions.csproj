@@ -1,12 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
+    <Product>Spectre.Console.Extensions</Product>
+    <Copyright>Copyright 2022 Sol Wasserman</Copyright>
+    <Description>Pretty print any object to the console</Description>
+    <Authors>Sol Wasserman</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RootNamespace>Spectre.Console.Extensions</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Spectre.Console" Version="0.43.0" />
+    <PackageReference Include="Spectre.Console" Version="0.45.0" />
   </ItemGroup>
 
 </Project>
