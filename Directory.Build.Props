@@ -1,6 +1,6 @@
 <Project>
     <PropertyGroup>
-        <LangVersion>10</LangVersion>
+        <LangVersion>11</LangVersion>
         <WarningLevel>4</WarningLevel>
         <NoWarn>CS1587,CS1591,CS1998,NU5105</NoWarn>
         <ImplicitUsings>enable</ImplicitUsings>
