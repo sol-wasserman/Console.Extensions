@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
+    <Product>Spectre.Console.Extensions</Product>
+    <Copyright>Copyright 2022 Sol Wasserman</Copyright>
+    <Description>Pretty print any object to the console</Description>
+    <Authors>Sol Wasserman</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RootNamespace>Spectre.Console.Extensions</RootNamespace>
   </PropertyGroup>
 
