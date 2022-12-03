@@ -1,19 +1,19 @@
 <Project>
-    <PropertyGroup>
-        <LangVersion>11</LangVersion>
-        <WarningLevel>4</WarningLevel>
-        <NoWarn>CS1587,CS1591,CS1998,NU5105</NoWarn>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11</LangVersion>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CS1587,CS1591,CS1998,NU5105</NoWarn>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <DebugType>full</DebugType>
-    </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <Optimize>true</Optimize>
-        <DebugType>embedded</DebugType>
-    </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>true</Optimize>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
 
 </Project>
