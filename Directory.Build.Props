@@ -1,10 +1,14 @@
 <Project>
   <PropertyGroup>
-    <LangVersion>11</LangVersion>
+    <LangVersion>13.0</LangVersion>
+    <PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))=./</PathMap>
     <WarningLevel>4</WarningLevel>
     <NoWarn>CS1587,CS1591,CS1998,NU5105</NoWarn>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <AnalysisModeReliability>All</AnalysisModeReliability>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
