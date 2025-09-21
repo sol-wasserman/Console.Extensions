@@ -6,8 +6,18 @@ using Spectre.Console.Rendering;
 
 namespace Spectre.Console.Extensions;
 
+/// <summary>
+/// Extension methods for rendering objects to the console.
+/// </summary>
 public static class RendersObject
 {
+    /// <summary>
+    /// Dumps an object to the console in a pretty format
+    /// </summary>
+    /// <param name="value">The object to dump</param>
+    /// <param name="title">An optional title for the output</param>
+    /// <param name="options">Optional dump configuration options</param>
+    /// <returns>The original <paramref name="value"/></returns>
     [return: NotNullIfNotNull(nameof(value))]
     public static T? Dump<T>(this T value, string? title = null, DumpOptions? options = null)
     {
@@ -16,6 +26,13 @@ public static class RendersObject
         return value;
     }
 
+    /// <summary>
+    /// Renders an object as a Spectre.Console renderable
+    /// </summary>
+    /// <param name="value">The object to render</param>
+    /// <param name="title">An optional title for the rendered output</param>
+    /// <param name="options">Optional dump configuration options</param>
+    /// <returns>A renderable representation of the object</returns>
     public static IRenderable Render<T>(this T? value, string? title = null, DumpOptions? options = null)
     {
         options = options.Resolve();
