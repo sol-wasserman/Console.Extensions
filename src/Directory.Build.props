@@ -10,6 +10,7 @@
     <Authors>Sol Wasserman</Authors>
     <Product>Spectre.Console.Extensions</Product>
     <Description>Pretty print any object to the console</Description>
+    <PackageReadmeFile>README.NuGet.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/sol-wasserman/Console.Extensions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/sol-wasserman/Console.Extensions</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -34,4 +35,8 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     <DebugType>embedded</DebugType>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="..\..\README.NuGet.md" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>
 </Project>
