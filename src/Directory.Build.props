@@ -38,5 +38,6 @@
   
   <ItemGroup>
     <None Include="..\..\README.NuGet.md" Pack="true" Visible="false" PackagePath=""/>
+    <None Include="..\..\examples\dump.png" Pack="true" Visible="false" PackagePath=""/>
   </ItemGroup>
 </Project>

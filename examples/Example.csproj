@@ -4,6 +4,7 @@
     <OutputType>exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
     <RootNamespace>Spectre.Console.Extensions.Example</RootNamespace>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
   
   <ItemGroup>
