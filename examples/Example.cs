@@ -1,27 +1,26 @@
 using Spectre.Console.Extensions;
 
-var subject = new Transaction
+var order = new Order
 {
-    Date = DateTime.Now,
-    IsPending = true,
-    Goods = new()
-    {
-        new(7804, "CryptoPunk 7804"),
-        new(3100, "CryptoPunk 3100"),
-        new(2107, Title: null),
-    },
-    Tags = new() {"super", "posh"},
+    Date = new(2035, 11, 1, 12, 0, 0, DateTimeKind.Utc),
+    IsWholesale = true,
+    Products =
+    [
+        new(1, "Mug"),
+        new(2, "Glass"),
+        new(3),
+    ],
+    Tags = ["expedite", "fragile"],
 };
 
-subject.Dump("Transaction");
+order.Dump("Order");
 
-#nullable disable
-public class Transaction
+public class Order
 {
-    public DateTime Date { get; init; }
-    public bool IsPending { get; init; }
-    public List<Line> Goods { get; init; }
-    public List<string> Tags { get; init; }
+    public required DateTime Date { get; init; }
+    public required bool IsWholesale { get; init; }
+    public required List<Product> Products { get; init; }
+    public required List<string> Tags { get; init; }
 
-    public record Line(long Id, string Title);
+    public record Product(long Id, string? Name = null);
 }

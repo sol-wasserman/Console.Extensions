@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <OutputType>exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <RootNamespace>Spectre.Console.Extensions.Example</RootNamespace>
   </PropertyGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\src\Spectre.Console.Extensions.csproj" />
+    <ProjectReference Include="..\src\Spectre.Console.Extensions\Spectre.Console.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

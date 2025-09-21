@@ -1,0 +1,42 @@
+<Project>
+  <Import Project="..\Directory.Build.props"/>
+  
+  <PropertyGroup>
+
+    <!-- NuGet Package Metadata -->
+    <Copyright>Copyright (c) 2025 Sol Wasserman</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>Sol Wasserman</Company>
+    <Authors>Sol Wasserman</Authors>
+    <Product>Spectre.Console.Extensions</Product>
+    <Description>Pretty print any object to the console</Description>
+    <PackageReadmeFile>README.NuGet.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/sol-wasserman/Console.Extensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sol-wasserman/Console.Extensions</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>console;spectre;spectre.console;pretty;dump;</PackageTags>
+
+    <!-- Build Configuration -->
+    <IsPackable>True</IsPackable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591;CS1573</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugSymbols>True</DebugSymbols>
+
+    <!-- Source Link Support -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="..\..\README.NuGet.md" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>
+</Project>

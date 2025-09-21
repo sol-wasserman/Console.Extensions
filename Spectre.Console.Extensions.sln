@@ -7,13 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Meta", "Meta", "{20595AD4-8
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 		.gitignore = .gitignore
+		Directory.Packages.props = Directory.Packages.props
+		.github\workflows\build.yml = .github\workflows\build.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "examples\Example.csproj", "{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectre.Console.Extensions", "src\Spectre.Console.Extensions.csproj", "{7861C541-DE1A-4656-9BF3-58C54F3EE475}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectre.Console.Extensions.Tests", "tests\Spectre.Console.Extensions.Tests\Spectre.Console.Extensions.Tests.csproj", "{B6BB4853-D084-425E-8354-8B7BC74F7FF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F502044-743D-4303-B061-2B1E429E754C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectre.Console.Extensions", "src\Spectre.Console.Extensions\Spectre.Console.Extensions.csproj", "{0232FC88-9531-43F9-BE49-9CE42FDAE224}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,13 +32,16 @@ Global
 		{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02A991A2-BDCD-44B3-BCEF-AD409A2C5027}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7861C541-DE1A-4656-9BF3-58C54F3EE475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7861C541-DE1A-4656-9BF3-58C54F3EE475}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7861C541-DE1A-4656-9BF3-58C54F3EE475}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7861C541-DE1A-4656-9BF3-58C54F3EE475}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6BB4853-D084-425E-8354-8B7BC74F7FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6BB4853-D084-425E-8354-8B7BC74F7FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6BB4853-D084-425E-8354-8B7BC74F7FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6BB4853-D084-425E-8354-8B7BC74F7FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0232FC88-9531-43F9-BE49-9CE42FDAE224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0232FC88-9531-43F9-BE49-9CE42FDAE224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0232FC88-9531-43F9-BE49-9CE42FDAE224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0232FC88-9531-43F9-BE49-9CE42FDAE224}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0232FC88-9531-43F9-BE49-9CE42FDAE224} = {1F502044-743D-4303-B061-2B1E429E754C}
 	EndGlobalSection
 EndGlobal

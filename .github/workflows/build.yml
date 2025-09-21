@@ -1,0 +1,58 @@
+name: Spectre.Console.Extensions
+env:
+  # Deployment settings
+  PACKAGE_VERSION: 0.1.1
+
+  # .NET build settings
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_NOLOGO: true
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    name: Run
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Install .NET Core SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: "global.json"
+
+      - name: Restore NuGet packages
+        run: dotnet restore
+        working-directory: ./
+
+      - name: Build
+        run: dotnet build -c Release --no-restore
+        working-directory: ./
+
+      - name: Test
+        run: dotnet test tests/Spectre.Console.Extensions.Tests/Spectre.Console.Extensions.Tests.csproj -c Release
+
+      - name: Calculate Version
+        id: v
+        run: |
+          if [ "${{ github.ref }}" = 'refs/heads/master' ]; then
+            echo "version=${PACKAGE_VERSION}" >> $GITHUB_OUTPUT
+          else
+            echo "version=${PACKAGE_VERSION}-develop.${{ github.run_number }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build and Pack Solution
+        run: |
+          echo "Version: ${{ steps.v.outputs.version }}"
+          dotnet build -c Release -p:Version=${{ steps.v.outputs.version }}
+          dotnet pack --no-build -c Release -p:PackageVersion=${{ steps.v.outputs.version }} -o ./artifacts
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: ./artifacts
+          retention-days: 1
